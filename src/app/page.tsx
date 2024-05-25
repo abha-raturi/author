@@ -1,12 +1,12 @@
-import Login from "@/components/auth/Login";
+
+import HomePage from "@/components/auth/HomePage";
 
 export default function Home() {
- 
+  
   return (
     <>
-  
-       <Login/>
-    
+    <HomePage />
+
     </>
   );
 

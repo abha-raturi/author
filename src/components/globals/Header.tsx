@@ -3,7 +3,7 @@
 import { Container, Nav, NavDropdown, Navbar } from "react-bootstrap";
 
 export default function Header(props: any) {
-    const student = {name:"suresh",age:23};
+    
 
     return (<>
 
@@ -15,6 +15,9 @@ export default function Header(props: any) {
                     <Nav className="me-auto">
                         <Nav.Link href="#home">Home</Nav.Link>
                         <Nav.Link href="#link">Link</Nav.Link>
+
+                    </Nav>
+                    <Nav>
                         <NavDropdown title="Dropdown" id="basic-nav-dropdown">
                             <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
                             <NavDropdown.Item href="#action/3.2">
