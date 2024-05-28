@@ -2,6 +2,7 @@
 import { Col, Container, Row } from "react-bootstrap";
 import ProductList from "../product/ProductList";
 import { useState } from "react";
+import ProductDetail from "../product/ProductDetail";
 
 const productData = [
     {title:'Product 1', price: 100, image:'/camera.webp', description:'Camera description', discount: 20, rating: 4.5},
@@ -10,22 +11,35 @@ const productData = [
     {title:'Product 4', price: 400, image:'/camera.webp', description:'Camera description 4', discount: 0, rating: 4.0},
     {title:'Product 5', price: 500, image:'/camera.webp', description:'Camera description 5', discount: 5, rating: 3.0},
     {title:'Product 6', price: 600, image:'/camera.webp', description:'Camera description 6', discount: 0, rating: 4.5},
+    {title:'Product 7', price: 800, image:'/camera.webp', description:'Camera description', discount: 50, rating: 4.5},
 ]
 
 
 export default function HomePage() {
     const [products, setProducts] = useState(productData);
+    const [product, setProduct] = useState();
+
+    const handleSetProduct =(product:any) => {
+        setProduct(product)
+    }
+
 
     return (
         <Container>
+            {!product?
             <Row className="mt-5">
+
                 {products.map((product:any, index:number) => (
-                <Col md={3} className="mb-5" key={index}>
-                    <ProductList product={product} />
+                <Col md={3} onClick={() => handleSetProduct(product)} className="mb-5"  key={index}>
+                    <ProductList product={product}  />
+
+                    
                 </Col>
                 ))}
                 
             </Row>
+            :<ProductDetail product={product} />
+            }
         </Container>
     );
 }

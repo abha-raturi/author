@@ -11,6 +11,8 @@ export default function ProductList({product}:any) {
             <Icon.Star/>
             <Icon.Star/>
             <Icon.Star/>
+            <Icon.Star/>
+            
             </>
         }else if(rating<2.5){
             return <>
@@ -48,8 +50,8 @@ export default function ProductList({product}:any) {
     }
     return (
         <div>
-            <Card style={{ width: '18rem' }}>
-                <Card.Img variant="top" src="/camera.webp" />
+            <Card >
+                <Card.Img variant="top" src={product?.image} />
                 <Card.Body>
                     <Card.Title>{product?.title}</Card.Title>
                     <Card.Text>{product?.description}</Card.Text>
